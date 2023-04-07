@@ -75,6 +75,10 @@ const SidebarNav = (props: SidebarProps) => {
                   </a>
                 </div>
               </li>
+              <li className="link-item">
+                <div className="link-title">filler</div>
+                <span>filler</span>
+              </li>
             </ul>
           </div>
         </nav>

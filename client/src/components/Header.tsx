@@ -1,7 +1,10 @@
 import React from 'react'
 import { Link} from 'react-router-dom';
 import '../App.css';
-import icon from '../static/brand-icon.png';
+
+import Icosahedron from './Icosahedron';
+
+
 //component that triggers the navbar menu
 
 interface HeaderProps {
@@ -16,9 +19,9 @@ const Header = (props: HeaderProps) => {
         <div className='brand-icon'>
             <Link to='/'>
                 <div className='icon'>
-                    <img src='icon'></img>
+                    <Icosahedron></Icosahedron>
                 </div>
-                <span>OWebsite</span>
+                <span className='title'>OWebsite</span>
             </Link>
         </div>
         <button className={`menu-trigger ${props.menuState ? 'menu-close' : ''}`} onClick={() => props.setMenuState(!props.menuState)}>
