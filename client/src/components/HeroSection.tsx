@@ -1,11 +1,8 @@
-import React from 'react'
+import React, { Suspense } from 'react'
 import './hero.scss'
-import Islandmodel from './model/Island'
-import { Canvas } from '@react-three/fiber'
+import Cameramodel from './CameraModel'
 
-const HeroSection = () => {
-
-
+function HeroSection ()  {
   return (
     <div className='section'>
         <div className='container'>
@@ -15,9 +12,7 @@ const HeroSection = () => {
                 <button className='learnbttn'>Learn more</button>
             </div>
             <div className='right-side'>
-              <Canvas>
-
-              </Canvas>
+                <Cameramodel></Cameramodel>
             </div>
         </div>
     </div>
@@ -25,3 +20,8 @@ const HeroSection = () => {
 }
 
 export default HeroSection
+
+
+
+
+
