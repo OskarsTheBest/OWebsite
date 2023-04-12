@@ -16,9 +16,10 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from .views import gltf_asset_view
+from django.views.generic import TemplateView
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('gltf-assets/<filename>/', gltf_asset_view, name='gltf-asset'),
+    path('', TemplateView.as_view(template_name='index.html')),
+
 ]

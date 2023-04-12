@@ -1,0 +1,7 @@
+{
+    "static": {
+      "glob": "./static/**/*",
+      "dir": "./dist"
+    }
+  }
+  

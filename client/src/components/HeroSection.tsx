@@ -1,6 +1,6 @@
 import React, { Suspense } from 'react'
 import './hero.scss'
-import Cameramodel from './CameraModel'
+import Islandmodel from './IslandModel'
 
 function HeroSection ()  {
   return (
@@ -12,7 +12,7 @@ function HeroSection ()  {
                 <button className='learnbttn'>Learn more</button>
             </div>
             <div className='right-side'>
-                <Cameramodel></Cameramodel>
+                <Islandmodel></Islandmodel>
             </div>
         </div>
     </div>
