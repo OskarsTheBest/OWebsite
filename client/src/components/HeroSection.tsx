@@ -1,6 +1,9 @@
 import React, { Suspense } from 'react'
 import './hero.scss'
-import Islandmodel from './IslandModel'
+import Cameramodel from './IslandModel'
+import { Canvas } from '@react-three/fiber';
+import { OrbitControls } from '@react-three/drei';
+import { Model } from './IslandModel';
 
 function HeroSection ()  {
   return (
@@ -12,7 +15,15 @@ function HeroSection ()  {
                 <button className='learnbttn'>Learn more</button>
             </div>
             <div className='right-side'>
-                <Islandmodel></Islandmodel>
+            <Canvas>
+          <OrbitControls enableZoom={false} autoRotate/>
+          <ambientLight intensity={1}/>
+          <directionalLight position={[1,2,1]}/>
+          <mesh>
+            <icosahedronGeometry args={[1.25,0]}/>
+            <meshStandardMaterial color="purple"/>
+          </mesh>
+        </Canvas>
             </div>
         </div>
     </div>

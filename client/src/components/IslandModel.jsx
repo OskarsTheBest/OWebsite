@@ -5,199 +5,100 @@ import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader';
 import { useLoader } from '@react-three/fiber';
 
 
-export function Model({...props}) {
-  const group = useRef()
-  const { nodes, materials } = useLoader(GLTFLoader,'https://www.dropbox.com/scl/fo/dvys43ifs6jqv49cdpasy/h?dl=0&rlkey=15jjgo6hkg6gfhpqu96owqhfo/scene.gltf?raw=1');
+
+export function Model(props) {
+  const { nodes, materials } = useLoader(GLTFLoader,'https://s3-us-west-2.amazonaws.com/s.cdpn.io/39255/ladybug.gltf');
   return (
     <group {...props} dispose={null}>
-      <group rotation={[Math.PI / 2, 0, 0]}>
-        <mesh geometry={nodes.Object_4.geometry} material={materials.FeatherMaterial} />
-        <mesh geometry={nodes.Object_5.geometry} material={materials.FeatherMaterial} />
-        <mesh geometry={nodes.Object_6.geometry} material={materials.FeatherMaterial} />
-        <mesh geometry={nodes.Object_7.geometry} material={materials.FeatherMaterial} />
-        <mesh geometry={nodes.Object_8.geometry} material={materials.FeatherMaterial} />
-        <mesh geometry={nodes.Object_9.geometry} material={materials.FeatherMaterial} />
-        <mesh geometry={nodes.Object_10.geometry} material={materials.FeatherMaterial} />
-        <mesh geometry={nodes.Object_11.geometry} material={materials.FeatherMaterial} />
-        <mesh geometry={nodes.Object_12.geometry} material={materials.FeatherMaterial} />
-        <mesh geometry={nodes.Object_13.geometry} material={materials.FeatherMaterial} />
-        <mesh geometry={nodes.Object_14.geometry} material={materials.FeatherMaterial} />
-        <mesh geometry={nodes.Object_15.geometry} material={materials.FeatherMaterial} />
-        <mesh geometry={nodes.Object_16.geometry} material={materials.FeatherMaterial} />
-        <mesh geometry={nodes.Object_17.geometry} material={materials.FeatherMaterial} />
-        <mesh geometry={nodes.Object_18.geometry} material={materials.FeatherMaterial} />
-        <mesh geometry={nodes.Object_19.geometry} material={materials.FeatherMaterial} />
-        <mesh geometry={nodes.Object_20.geometry} material={materials.FeatherMaterial} />
-        <mesh geometry={nodes.Object_21.geometry} material={materials.FeatherMaterial} />
-        <mesh geometry={nodes.Object_22.geometry} material={materials.FeatherMaterial} />
-        <mesh geometry={nodes.Object_23.geometry} material={materials.FeatherMaterial} />
-        <mesh geometry={nodes.Object_24.geometry} material={materials.FeatherMaterial} />
-        <mesh geometry={nodes.Object_25.geometry} material={materials.FeatherMaterial} />
-        <mesh geometry={nodes.Object_26.geometry} material={materials.FeatherMaterial} />
-        <mesh geometry={nodes.Object_27.geometry} material={materials.FeatherMaterial} />
-        <mesh geometry={nodes.Object_28.geometry} material={materials.FeatherMaterial} />
-        <mesh geometry={nodes.Object_29.geometry} material={materials.FeatherMaterial} />
-        <mesh geometry={nodes.Object_30.geometry} material={materials.FeatherMaterial} />
-        <mesh geometry={nodes.Object_31.geometry} material={materials.FeatherMaterial} />
-        <mesh geometry={nodes.Object_32.geometry} material={materials.FeatherMaterial} />
-        <mesh geometry={nodes.Object_33.geometry} material={materials.FeatherMaterial} />
-        <mesh geometry={nodes.Object_34.geometry} material={materials.FeatherMaterial} />
-        <mesh geometry={nodes.Object_35.geometry} material={materials.FeatherMaterial} />
-        <mesh geometry={nodes.Object_36.geometry} material={materials.FeatherMaterial} />
-        <mesh geometry={nodes.Object_37.geometry} material={materials.FeatherMaterial} />
-        <mesh geometry={nodes.Object_38.geometry} material={materials.FeatherMaterial} />
-        <mesh geometry={nodes.Object_39.geometry} material={materials.FeatherMaterial} />
-        <mesh geometry={nodes.Object_40.geometry} material={materials.FeatherMaterial} />
-        <mesh geometry={nodes.Object_41.geometry} material={materials.FeatherMaterial} />
-        <mesh geometry={nodes.Object_42.geometry} material={materials.FeatherMaterial} />
-        <mesh geometry={nodes.Object_43.geometry} material={materials.FeatherMaterial} />
-        <mesh geometry={nodes.Object_44.geometry} material={materials.FeatherMaterial} />
-        <mesh geometry={nodes.Object_45.geometry} material={materials.FeatherMaterial} />
-        <mesh geometry={nodes.Object_46.geometry} material={materials.FeatherMaterial} />
-        <mesh geometry={nodes.Object_47.geometry} material={materials.FeatherMaterial} />
-        <mesh geometry={nodes.Object_48.geometry} material={materials.FeatherMaterial} />
-        <mesh geometry={nodes.Object_49.geometry} material={materials.FeatherMaterial} />
-        <mesh geometry={nodes.Object_50.geometry} material={materials.FeatherMaterial} />
-        <mesh geometry={nodes.Object_51.geometry} material={materials.FeatherMaterial} />
-        <mesh geometry={nodes.Object_52.geometry} material={materials.FeatherMaterial} />
-        <mesh geometry={nodes.Object_53.geometry} material={materials.FeatherMaterial} />
-        <mesh geometry={nodes.Object_54.geometry} material={materials.FeatherMaterial} />
-        <mesh geometry={nodes.Object_55.geometry} material={materials.FeatherMaterial} />
-        <mesh geometry={nodes.Object_56.geometry} material={materials.FeatherMaterial} />
-        <mesh geometry={nodes.Object_57.geometry} material={materials.FeatherMaterial} />
-        <mesh geometry={nodes.Object_58.geometry} material={materials.FeatherMaterial} />
-        <mesh geometry={nodes.Object_59.geometry} material={materials.FeatherMaterial} />
-        <mesh geometry={nodes.Object_60.geometry} material={materials.FeatherMaterial} />
-        <mesh geometry={nodes.Object_61.geometry} material={materials.FeatherMaterial} />
-        <mesh geometry={nodes.Object_62.geometry} material={materials.FeatherMaterial} />
-        <mesh geometry={nodes.Object_63.geometry} material={materials.FeatherMaterial} />
-        <mesh geometry={nodes.Object_64.geometry} material={materials.FeatherMaterial} />
-        <mesh geometry={nodes.Object_65.geometry} material={materials.FeatherMaterial} />
-        <mesh geometry={nodes.Object_66.geometry} material={materials.FeatherMaterial} />
-        <mesh geometry={nodes.Object_67.geometry} material={materials.FeatherMaterial} />
-        <mesh geometry={nodes.Object_68.geometry} material={materials.FeatherMaterial} />
-        <mesh geometry={nodes.Object_69.geometry} material={materials.FeatherMaterial} />
-        <mesh geometry={nodes.Object_70.geometry} material={materials.FeatherMaterial} />
-        <mesh geometry={nodes.Object_71.geometry} material={materials.FeatherMaterial} />
-        <mesh geometry={nodes.Object_72.geometry} material={materials.FeatherMaterial} />
-        <mesh geometry={nodes.Object_73.geometry} material={materials.FeatherMaterial} />
-        <mesh geometry={nodes.Object_74.geometry} material={materials.FeatherMaterial} />
-        <mesh geometry={nodes.Object_75.geometry} material={materials.FeatherMaterial} />
-        <mesh geometry={nodes.Object_76.geometry} material={materials.FeatherMaterial} />
-        <mesh geometry={nodes.Object_77.geometry} material={materials.FeatherMaterial} />
-        <mesh geometry={nodes.Object_78.geometry} material={materials.FeatherMaterial} />
-        <mesh geometry={nodes.Object_79.geometry} material={materials.FeatherMaterial} />
-        <mesh geometry={nodes.Object_80.geometry} material={materials.FeatherMaterial} />
-        <mesh geometry={nodes.Object_81.geometry} material={materials.FeatherMaterial} />
-        <mesh geometry={nodes.Object_82.geometry} material={materials.FeatherMaterial} />
-        <mesh geometry={nodes.Object_83.geometry} material={materials.FeatherMaterial} />
-        <mesh geometry={nodes.Object_84.geometry} material={materials.FeatherMaterial} />
-        <mesh geometry={nodes.Object_85.geometry} material={materials.FeatherMaterial} />
-        <mesh geometry={nodes.Object_86.geometry} material={materials.FeatherMaterial} />
-        <mesh geometry={nodes.Object_87.geometry} material={materials.FeatherMaterial} />
-        <mesh geometry={nodes.Object_88.geometry} material={materials.FeatherMaterial} />
-        <mesh geometry={nodes.Object_89.geometry} material={materials.FeatherMaterial} />
-        <mesh geometry={nodes.Object_90.geometry} material={materials.FeatherMaterial} />
-        <mesh geometry={nodes.Object_91.geometry} material={materials.FeatherMaterial} />
-        <mesh geometry={nodes.Object_92.geometry} material={materials.FeatherMaterial} />
-        <mesh geometry={nodes.Object_93.geometry} material={materials.FeatherMaterial} />
-        <mesh geometry={nodes.Object_94.geometry} material={materials.FeatherMaterial} />
-        <mesh geometry={nodes.Object_95.geometry} material={materials.FeatherMaterial} />
-        <mesh geometry={nodes.Object_96.geometry} material={materials.FeatherMaterial} />
-        <mesh geometry={nodes.Object_97.geometry} material={materials.FeatherMaterial} />
-        <mesh geometry={nodes.Object_98.geometry} material={materials.FeatherMaterial} />
-        <mesh geometry={nodes.Object_99.geometry} material={materials.FeatherMaterial} />
-        <mesh geometry={nodes.Object_100.geometry} material={materials.FeatherMaterial} />
-        <mesh geometry={nodes.Object_101.geometry} material={materials.FeatherMaterial} />
-        <mesh geometry={nodes.Object_102.geometry} material={materials.FeatherMaterial} />
-        <mesh geometry={nodes.Object_103.geometry} material={materials.FeatherMaterial} />
-        <mesh geometry={nodes.Object_104.geometry} material={materials.FeatherMaterial} />
-        <mesh geometry={nodes.Object_105.geometry} material={materials.FeatherMaterial} />
-        <mesh geometry={nodes.Object_106.geometry} material={materials.FeatherMaterial} />
-        <mesh geometry={nodes.Object_107.geometry} material={materials.FeatherMaterial} />
-        <mesh geometry={nodes.Object_108.geometry} material={materials.FeatherMaterial} />
-        <mesh geometry={nodes.Object_109.geometry} material={materials.FeatherMaterial} />
-        <mesh geometry={nodes.Object_110.geometry} material={materials.FeatherMaterial} />
-        <mesh geometry={nodes.Object_111.geometry} material={materials.FeatherMaterial} />
-        <mesh geometry={nodes.Object_112.geometry} material={materials.FeatherMaterial} />
-        <mesh geometry={nodes.Object_113.geometry} material={materials.FeatherMaterial} />
-        <mesh geometry={nodes.Object_114.geometry} material={materials.FeatherMaterial} />
-        <mesh geometry={nodes.Object_115.geometry} material={materials.FeatherMaterial} />
-        <mesh geometry={nodes.Object_116.geometry} material={materials.FeatherMaterial} />
-        <mesh geometry={nodes.Object_117.geometry} material={materials.FeatherMaterial} />
-        <mesh geometry={nodes.Object_118.geometry} material={materials.FeatherMaterial} />
-        <mesh geometry={nodes.Object_119.geometry} material={materials.FeatherMaterial} />
-        <mesh geometry={nodes.Object_120.geometry} material={materials.FeatherMaterial} />
-        <mesh geometry={nodes.Object_121.geometry} material={materials.FeatherMaterial} />
-        <mesh geometry={nodes.Object_122.geometry} material={materials.FeatherMaterial} />
-        <mesh geometry={nodes.Object_123.geometry} material={materials.FeatherMaterial} />
-        <mesh geometry={nodes.Object_124.geometry} material={materials.FeatherMaterial} />
-        <mesh geometry={nodes.Object_125.geometry} material={materials.FeatherMaterial} />
-        <mesh geometry={nodes.Object_126.geometry} material={materials.FeatherMaterial} />
-        <mesh geometry={nodes.Object_127.geometry} material={materials.FeatherMaterial} />
-        <mesh geometry={nodes.Object_128.geometry} material={materials.FeatherMaterial} />
-        <mesh geometry={nodes.Object_129.geometry} material={materials.FeatherMaterial} />
-        <mesh geometry={nodes.Object_130.geometry} material={materials.FeatherMaterial} />
-        <mesh geometry={nodes.Object_131.geometry} material={materials.FeatherMaterial} />
-        <mesh geometry={nodes.Object_132.geometry} material={materials.FeatherMaterial} />
-        <mesh geometry={nodes.Object_133.geometry} material={materials.FeatherMaterial} />
-        <mesh geometry={nodes.Object_134.geometry} material={materials.FeatherMaterial} />
-        <mesh geometry={nodes.Object_135.geometry} material={materials.FeatherMaterial} />
-        <mesh geometry={nodes.Object_136.geometry} material={materials.FeatherMaterial} />
-        <mesh geometry={nodes.Object_137.geometry} material={materials.FeatherMaterial} />
-        <mesh geometry={nodes.Object_138.geometry} material={materials.FeatherMaterial} />
-        <mesh geometry={nodes.Object_139.geometry} material={materials.FeatherMaterial} />
-        <mesh geometry={nodes.Object_140.geometry} material={materials.FeatherMaterial} />
-        <mesh geometry={nodes.Object_141.geometry} material={materials.FeatherMaterial} />
-        <mesh geometry={nodes.Object_142.geometry} material={materials.FeatherMaterial} />
-        <mesh geometry={nodes.Object_143.geometry} material={materials.FeatherMaterial} />
-        <mesh geometry={nodes.Object_144.geometry} material={materials.FeatherMaterial} />
-        <mesh geometry={nodes.Object_145.geometry} material={materials.FeatherMaterial} />
-        <mesh geometry={nodes.Object_146.geometry} material={materials.FeatherMaterial} />
-        <mesh geometry={nodes.Object_147.geometry} material={materials.FeatherMaterial} />
-        <mesh geometry={nodes.Object_148.geometry} material={materials.FeatherMaterial} />
-        <mesh geometry={nodes.Object_149.geometry} material={materials.FeatherMaterial} />
-        <mesh geometry={nodes.Object_150.geometry} material={materials.FeatherMaterial} />
-        <mesh geometry={nodes.Object_151.geometry} material={materials.FeatherMaterial} />
-        <mesh geometry={nodes.Object_152.geometry} material={materials.FeatherMaterial} />
-        <mesh geometry={nodes.Object_153.geometry} material={materials.FeatherMaterial} />
-        <mesh geometry={nodes.Object_154.geometry} material={materials.FeatherMaterial} />
-        <mesh geometry={nodes.Object_155.geometry} material={materials.FeatherMaterial} />
-        <mesh geometry={nodes.Object_156.geometry} material={materials.FeatherMaterial} />
-        <mesh geometry={nodes.Object_157.geometry} material={materials.FeatherMaterial} />
-        <mesh geometry={nodes.Object_158.geometry} material={materials.FeatherMaterial} />
-        <mesh geometry={nodes.Object_159.geometry} material={materials.FeatherMaterial} />
-        <mesh geometry={nodes.Object_160.geometry} material={materials.FeatherMaterial} />
-        <mesh geometry={nodes.Object_161.geometry} material={materials.FeatherMaterial} />
-        <mesh geometry={nodes.Object_162.geometry} material={materials.FeatherMaterial} />
-        <mesh geometry={nodes.Object_163.geometry} material={materials.FeatherMaterial} />
-        <mesh geometry={nodes.Object_164.geometry} material={materials.FeatherMaterial} />
-        <mesh geometry={nodes.Object_165.geometry} material={materials.FeatherMaterial} />
-        <mesh geometry={nodes.Object_166.geometry} material={materials.FeatherMaterial} />
-        <mesh geometry={nodes.Object_167.geometry} material={materials.FeatherMaterial} />
-        <mesh geometry={nodes.Object_168.geometry} material={materials.FeatherMaterial} />
-        <mesh geometry={nodes.Object_169.geometry} material={materials.FeatherMaterial} />
-      </group>
-      <group rotation={[Math.PI / 2, 0, 0]}>
-        <mesh geometry={nodes.Object_171.geometry} material={materials['Material.212']} />
-        <mesh geometry={nodes.Object_172.geometry} material={materials['Material.226']} />
-        <mesh geometry={nodes.Object_173.geometry} material={materials['Material.227']} />
-        <mesh geometry={nodes.Object_174.geometry} material={materials['Material.330']} />
-        <mesh geometry={nodes.Object_175.geometry} material={materials['Material.334']} />
-        <mesh geometry={nodes.Object_176.geometry} material={materials['Material.335']} />
-        <mesh geometry={nodes.Object_177.geometry} material={materials['Material.336']} />
-        <mesh geometry={nodes.Object_178.geometry} material={materials['Material.282']} />
-        <mesh geometry={nodes.Object_179.geometry} material={materials['Material.283']} />
-        <mesh geometry={nodes.Object_180.geometry} material={materials['Material.102']} />
-        <mesh geometry={nodes.Object_181.geometry} material={materials['Material.102']} />
-        <mesh geometry={nodes.Object_182.geometry} material={materials['Material.102']} />
-        <mesh geometry={nodes.Object_183.geometry} material={materials['Material.102']} />
-        <mesh geometry={nodes.Object_184.geometry} material={materials['Material.104']} />
-        <mesh geometry={nodes.Object_185.geometry} material={materials['Material.105']} />
+      <group rotation={[-Math.PI / 2, 0, 0]}>
+        <group position={[0.87, -1.6, 10.17]} rotation={[-0.26, 0, 0]} scale={0.25}>
+          <group position={[0.01, -1.02, 4.04]} rotation={[1.18, 0.59, 1.03]}>
+            <mesh geometry={nodes.Shell_Right005_0.geometry} material={materials['Lady_Red.001']} />
+            <mesh geometry={nodes.Shell_Right005_1.geometry} material={materials['Lady_White.001']} />
+            <mesh geometry={nodes.Shell_Right005_2.geometry} material={materials['Lady_Black.001']} />
+          </group>
+          <group position={[0.01, -1.02, 4.04]} rotation={[1.18, -0.59, -1.03]}>
+            <mesh geometry={nodes.Shell_Left005_0.geometry} material={materials['Lady_Red.001']} />
+            <mesh geometry={nodes.Shell_Left005_1.geometry} material={materials['Lady_White.001']} />
+            <mesh geometry={nodes.Shell_Left005_2.geometry} material={materials['Lady_Black.001']} />
+          </group>
+          <group position={[0.08, -1, 2.33]}>
+            <group position={[0.86, -0.6, -0.22]} rotation={[0.82, 0.49, 0.7]}>
+              <group position={[1.48, -0.81, -0.11]}>
+                <mesh geometry={nodes.Left_Leg_04037_0.geometry} material={materials['Lady_Black.001']} position={[0.01, 0.05, -1.78]} />
+                <mesh geometry={nodes.Left_Leg_03037_0.geometry} material={materials['Lady_Black.001']} />
+              </group>
+              <mesh geometry={nodes.Left_Leg_02199_0.geometry} material={materials['Lady_Black.001']} />
+            </group>
+            <mesh geometry={nodes.Left_Leg_01037_0.geometry} material={materials['Lady_Black.001']} />
+          </group>
+          <group position={[-0.55, -0.17, 2.02]}>
+            <group position={[-1.07, 0.5, -0.08]} rotation={[0.31, -0.82, -0.33]}>
+              <group position={[-1.68, 0.74, 0.26]}>
+                <mesh geometry={nodes.Left_Leg_04036_0.geometry} material={materials['Lady_Black.001']} position={[-0.39, 0.06, -1.92]} />
+                <mesh geometry={nodes.Left_Leg_03036_0.geometry} material={materials['Lady_Black.001']} />
+              </group>
+              <mesh geometry={nodes.Left_Leg_02198_0.geometry} material={materials['Lady_Black.001']} />
+            </group>
+            <mesh geometry={nodes.Left_Leg_01036_0.geometry} material={materials['Lady_Black.001']} />
+          </group>
+          <group position={[-0.08, -1, 2.33]}>
+            <group position={[-0.86, -0.6, -0.22]} rotation={[0.82, -0.4, -0.67]}>
+              <group position={[-1.48, -0.81, -0.11]}>
+                <mesh geometry={nodes.Left_Leg_04035_0.geometry} material={materials['Lady_Black.001']} position={[-0.01, 0.05, -1.78]} />
+                <mesh geometry={nodes.Left_Leg_03035_0.geometry} material={materials['Lady_Black.001']} />
+              </group>
+              <mesh geometry={nodes.Left_Leg_02197_0.geometry} material={materials['Lady_Black.001']} />
+            </group>
+            <mesh geometry={nodes.Left_Leg_01035_0.geometry} material={materials['Lady_Black.001']} />
+          </group>
+          <group position={[0.55, -0.17, 2.02]}>
+            <group position={[1.07, 0.5, -0.08]} rotation={[0.16, 0.95, 0.4]}>
+              <group position={[1.68, 0.74, 0.26]}>
+                <mesh geometry={nodes.Left_Leg_04034_0.geometry} material={materials['Lady_Black.001']} position={[0.39, 0.06, -1.92]} />
+                <mesh geometry={nodes.Left_Leg_03034_0.geometry} material={materials['Lady_Black.001']} />
+              </group>
+              <mesh geometry={nodes.Left_Leg_02196_0.geometry} material={materials['Lady_Black.001']} />
+            </group>
+            <mesh geometry={nodes.Left_Leg_01034_0.geometry} material={materials['Lady_Black.001']} />
+          </group>
+          <group position={[0.52, 1.25, 1.87]}>
+            <group position={[0.82, 0.8, -0.05]} rotation={[0.32, 0.95, -0.01]}>
+              <group position={[1.48, 1.03, 0.03]}>
+                <mesh geometry={nodes.Left_Leg_04033_0.geometry} material={materials['Lady_Black.001']} position={[-0.47, 0.92, -1.61]} />
+                <mesh geometry={nodes.Left_Leg_03033_0.geometry} material={materials['Lady_Black.001']} />
+              </group>
+              <mesh geometry={nodes.Left_Leg_02195_0.geometry} material={materials['Lady_Black.001']} />
+            </group>
+            <mesh geometry={nodes.Left_Leg_01033_0.geometry} material={materials['Lady_Black.001']} />
+          </group>
+          <group position={[-0.52, 1.25, 1.87]}>
+            <group position={[-0.82, 0.8, -0.05]} rotation={[0.56, -0.72, 0.32]}>
+              <group position={[-1.48, 1.03, 0.03]}>
+                <mesh geometry={nodes.Left_Leg_04032_0.geometry} material={materials['Lady_Black.001']} position={[0.47, 0.92, -1.61]} />
+                <mesh geometry={nodes.Left_Leg_03032_0.geometry} material={materials['Lady_Black.001']} />
+              </group>
+              <mesh geometry={nodes.Left_Leg_02194_0.geometry} material={materials['Lady_Black.001']} />
+            </group>
+            <mesh geometry={nodes.Left_Leg_01032_0.geometry} material={materials['Lady_Black.001']} />
+          </group>
+          <group position={[0, -1.76, 2.87]} rotation={[0.31, 0, 0]}>
+            <mesh geometry={nodes.Head016_0.geometry} material={materials['Lady_Black.001']} />
+            <mesh geometry={nodes.Head016_1.geometry} material={materials['Lady_Eyes.001']} />
+            <mesh geometry={nodes.Head016_2.geometry} material={materials['Lady_White.001']} />
+          </group>
+          <group position={[0, 1.05, 2.33]}>
+            <mesh geometry={nodes.Wing_Right005_0.geometry} material={materials['Wing.001']} position={[0.87, -0.9, 1.56]} rotation={[0, -0.24, 0]} />
+            <mesh geometry={nodes.Wing_Left005_0.geometry} material={materials['Wing.001']} position={[-0.87, -0.9, 1.56]} rotation={[0, 0.27, 0]} />
+            <mesh geometry={nodes.Body025_0.geometry} material={materials['Lady_Black.001']} />
+            <mesh geometry={nodes.Body025_1.geometry} material={materials['Lady_White.001']} />
+          </group>
+        </group>
       </group>
     </group>
   )
 }
+
 
 function Islandmodel() {
 
