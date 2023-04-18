@@ -11,63 +11,77 @@ import { Flip } from "gsap/dist/Flip";
 import SceneInit from '../components/lib/SceneInit';
 
 
+gsap.registerPlugin(Flip);
+
+const people = [
+  { id: 1, name: 'John Doe', description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis eget gravida velit, in pretium odio. Ut sit amet enim euismod, faucibus est eget, bibendum quam. Donec eu eleifend mauris, quis pharetra lorem.', image: person1 },
+  { id: 2, name: 'Jane Smith', description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis eget gravida velit, in pretium odio. Ut sit amet enim euismod, faucibus est eget, bibendum quam. Donec eu eleifend mauris, quis pharetra lorem.', image: person2 },
+  { id: 3, name: 'Bob Johnson', description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis eget gravida velit, in pretium odio. Ut sit amet enim euismod, faucibus est eget, bibendum quam. Donec eu eleifend mauris, quis pharetra lorem.', image: person3 },
+  { id: 4, name: 'Mary Williams', description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis eget gravida velit, in pretium odio. Ut sit amet enim euismod, faucibus est eget, bibendum quam. Donec eu eleifend mauris, quis pharetra lorem.', image: person4 },
+  { id: 5, name: 'Tom Brown', description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis eget gravida velit, in pretium odio. Ut sit amet enim euismod, faucibus est eget, bibendum quam. Donec eu eleifend mauris, quis pharetra lorem.', image: person5 },
+  { id: 6, name: 'Samantha Green', description: 'mutter ipsum dolor sit amet, consectetur adipiscing elit. Duis eget gravida velit, in pretium odio. Ut sit amet enim euismod, faucibus est eget, bibendum quam. Donec eu eleifend mauris, quis pharetra lorem.', image: person6 },
+];
+
 const About = () => {
-  const humans = useRef<HTMLDivElement[]>([]);
-  const bigHuman = useRef<HTMLDivElement>(null);
+  const galleryRef = useRef(null);
+  const bigHumanRef = useRef(null);
+  const popupRef = useRef(null);
 
   useEffect(() => {
-    gsap.registerPlugin(Flip);
+    const gallery = galleryRef.current;
+    const humans = gallery.querySelectorAll('figure');
 
-    humans.current = Array.from(document.querySelectorAll('.gallery figure'));
+    const changeGrid = (human) => {
+      if (human === bigHumanRef.current) return;
 
-    humans.current.forEach((human) => {
-      human.addEventListener('click', () => changeGrid(human))
+      const state = Flip.getState(humans);
+
+      bigHumanRef.current.dataset.grid = human.dataset.grid;
+      human.dataset.grid = 'img-1';
+      bigHumanRef.current = human;
+
+      Flip.from(state, {
+        absolute: true,
+        ease: 'Power1.inOut',
+      });
+
+      // Update the popup content
+      const personId = parseInt(human.dataset.grid.replace('img-', ''));
+      const selectedPerson = people.find((person) => person.id === personId);
+      popupRef.current.innerHTML = `
+        <h3>${selectedPerson.name}</h3>
+        <p>${selectedPerson.description}</p>
+      `;
+    };
+
+    humans.forEach((human) => {
+      human.addEventListener('click', (e) => changeGrid(human));
     });
+
+    bigHumanRef.current = humans[0];
 
     return () => {
-      humans.current.forEach((human) => {
-        human.removeEventListener('click', () => changeGrid(human))
+      humans.forEach((human) => {
+        human.removeEventListener('click', (e) => changeGrid(human));
       });
-    }
+    };
   }, []);
 
-  function changeGrid(human: HTMLDivElement) {
-    if(human === bigHuman.current) return;
 
-    const state = Flip.getState(humans.current);
-
-    bigHuman.current?.setAttribute('data-grid', human.getAttribute('data-grid') ?? '');
-    human.setAttribute('data-grid', 'img-1');
-    bigHuman.current = human;
-
-    Flip.from(state, {
-      absolute: true,
-      ease: 'power1.inOut'
-    });
-  }
-
+  
   return (
     <div>
-      <h1 className='h1-love'>We ❤️ What We do</h1>
-      <div className='gallery'>
-        <figure data-grid="img-1" ref={(el) => bigHuman.current = el ?? null}>
-          <img src={person1} alt= "" />
-        </figure>
-        <figure data-grid="img-2" ref={(el) => humans.current[1] = el ?? null}>
-          <img src={person2} alt= "" />
-        </figure>
-        <figure data-grid="img-3" ref={(el) => humans.current[2] = el ?? null}>
-          <img src={person3} alt= "" />
-        </figure>
-        <figure data-grid="img-4" ref={(el) => humans.current[3] = el ?? null}>
-          <img src={person4} alt= "" />
-        </figure>
-        <figure data-grid="img-5" ref={(el) => humans.current[4] = el ?? null}>
-          <img src={person5} alt= "" />
-        </figure>
-        <figure data-grid="img-6" ref={(el) => humans.current[5] = el ?? null}>
-          <img src={person6} alt= "" />
-        </figure>
+      <h1 className="h1-love">We ❤️ What We do</h1>
+      <div className="gallery" ref={galleryRef}>
+        {people.map((person) => (
+          <figure data-grid={`img-${person.id}`} key={person.id}>
+            <img src={person.image} alt="" />
+          </figure>
+        ))}
+      </div>
+      <div className="popup" ref={popupRef}>
+        <h3>{people[0].name}</h3>
+        <p>{people[0].description}</p>
       </div>
     </div>
   );
