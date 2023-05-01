@@ -1,7 +1,23 @@
+import { useRef } from 'react'
 import React from 'react'
 import '../components/Contact.css'
+import emailjs from '@emailjs/browser'
 
 const Contact = () => {
+  const form = useRef();
+
+  const sendEmail = (e) => {
+    e.preventDefault();
+
+    emailjs.sendForm('service_djjwwtm', 'template_b8a46lz', form.current, 'MF0xyZfVDkZVEeSfM')
+      .then((result) => {
+          console.log(result.text);
+          console.log("message sent!")
+          e.target.reset();
+      }, (error) => {
+          console.log(error.text);
+      });
+  };
   return (
     <div>
             <section className='contact'>
@@ -34,23 +50,21 @@ const Contact = () => {
             </div>
           </div>
           <div className='contactForm'>
-            <form>
+            <form ref={form} onSubmit={sendEmail}>
               <h2>Send Message</h2>
               <div className='inputBox'>
-                <input type='text' name='' required></input>
-                <span>Full Name</span>
+              <input type="text" name="user_name"/>
+              <span>Name</span>
               </div>
               <div className='inputBox'>
-                <input type='text' name='' required></input>
-                <span>Email</span>
+              <input type="email" name="user_email"/>
+              <span>Email</span>
               </div>
               <div className='inputBox'>
-                <textarea required></textarea>
-                <span>Type your Message...</span>
+              <textarea name="message"/>
+              <span>Message</span>
               </div>
-              <div className='inputBox'>
-                <input type='' name='' defaultValue="Send"></input>
-              </div>
+              <input className='btn' type="submit" value="Send"/>
             </form>
           </div>
         </div>

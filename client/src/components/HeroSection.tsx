@@ -20,7 +20,7 @@ function HeroSection ()  {
           <ambientLight intensity={1}/>
           <directionalLight position={[1,2,1]}/>
           <mesh>
-            <icosahedronGeometry args={[1.25,0]}/>
+            <icosahedronGeometry args={[3,0]}/>
             <meshStandardMaterial color="purple"/>
           </mesh>
         </Canvas>
