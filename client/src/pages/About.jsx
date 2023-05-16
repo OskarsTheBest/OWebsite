@@ -1,3 +1,4 @@
+
 import React, { useRef, useEffect } from 'react';
 import '../components/about.scss';
 import person1 from "../static/person1.jpg";
@@ -8,18 +9,18 @@ import person5 from "../static/person5.jpg";
 import person6 from "../static/person6.jpg";
 import { gsap } from "gsap";
 import { Flip } from "gsap/dist/Flip";
-import SceneInit from '../components/lib/SceneInit';
+
 
 
 gsap.registerPlugin(Flip);
 
 const people = [
-  { id: 1, name: 'John Doe', description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis eget gravida velit, in pretium odio. Ut sit amet enim euismod, faucibus est eget, bibendum quam. Donec eu eleifend mauris, quis pharetra lorem.', image: person1 },
-  { id: 2, name: 'Jane Smith', description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis eget gravida velit, in pretium odio. Ut sit amet enim euismod, faucibus est eget, bibendum quam. Donec eu eleifend mauris, quis pharetra lorem.', image: person2 },
-  { id: 3, name: 'Bob Johnson', description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis eget gravida velit, in pretium odio. Ut sit amet enim euismod, faucibus est eget, bibendum quam. Donec eu eleifend mauris, quis pharetra lorem.', image: person3 },
-  { id: 4, name: 'Mary Williams', description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis eget gravida velit, in pretium odio. Ut sit amet enim euismod, faucibus est eget, bibendum quam. Donec eu eleifend mauris, quis pharetra lorem.', image: person4 },
-  { id: 5, name: 'Tom Brown', description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis eget gravida velit, in pretium odio. Ut sit amet enim euismod, faucibus est eget, bibendum quam. Donec eu eleifend mauris, quis pharetra lorem.', image: person5 },
-  { id: 6, name: 'Samantha Green', description: 'mutter ipsum dolor sit amet, consectetur adipiscing elit. Duis eget gravida velit, in pretium odio. Ut sit amet enim euismod, faucibus est eget, bibendum quam. Donec eu eleifend mauris, quis pharetra lorem.', image: person6 },
+  { id: 1,  image: person1 },
+  { id: 2,  image: person2 },
+  { id: 3,  image: person3 },
+  { id: 4,  image: person4 },
+  { id: 5,  image: person5 },
+  { id: 6,  image: person6 },
 ];
 
 const About = () => {
@@ -46,12 +47,9 @@ const About = () => {
       });
 
       // Update the popup content
-      const personId = parseInt(human.dataset.grid.replace('img-', ''));
-      const selectedPerson = people.find((person) => person.id === personId);
-      popupRef.current.innerHTML = `
-        <h3>${selectedPerson.name}</h3>
-        <p>${selectedPerson.description}</p>
-      `;
+
+
+
     };
 
     humans.forEach((human) => {
@@ -70,7 +68,8 @@ const About = () => {
 
   
   return (
-    <div>
+    <div className='about'>
+      
       <h1 className="h1-love">We ❤️ What We do</h1>
       <div className="gallery" ref={galleryRef}>
         {people.map((person) => (
@@ -80,11 +79,13 @@ const About = () => {
         ))}
       </div>
       <div className="popup" ref={popupRef}>
-        <h3>{people[0].name}</h3>
-        <p>{people[0].description}</p>
-      </div>
+      </div>  
     </div>
+
   );
 };
 
 export default About;
+
+
+

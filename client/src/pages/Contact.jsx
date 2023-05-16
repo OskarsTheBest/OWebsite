@@ -19,7 +19,7 @@ const Contact = () => {
       });
   };
   return (
-    <div>
+    <div className='contact-page'>
             <section className='contact'>
         <div className='content'>
           <h2>Contact Us</h2>
